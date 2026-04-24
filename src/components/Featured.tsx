@@ -1,22 +1,105 @@
+const attractions = [
+  {
+    name: "Храм-на-Крови",
+    category: "Религия",
+    description:
+      "Величественный православный храм, возведённый на месте расстрела царской семьи Романовых в 1918 году. Один из крупнейших храмов России и главный духовный символ города.",
+  },
+  {
+    name: "Плотинка",
+    category: "История",
+    description:
+      "Историческая плотина на реке Исеть — сердце города, с которого начинался Екатеринбург в 1723 году. Популярное место встреч и прогулок горожан.",
+  },
+  {
+    name: "Невьянская башня",
+    category: "Архитектура",
+    description:
+      "Загадочная наклонная башня XVIII века, построенная по приказу Акинфия Демидова. Считается уральским ответом Пизанской башне и хранит множество тайн.",
+  },
+  {
+    name: "Ельцин Центр",
+    category: "Культура",
+    description:
+      "Современный культурный центр и музей, посвящённый первому президенту России Борису Ельцину. Архитектурный шедевр и площадка для выставок, концертов и дискуссий.",
+  },
+  {
+    name: "Граница Европы и Азии",
+    category: "География",
+    description:
+      "Легендарный обелиск в 17 км от города, стоящий точно на границе двух континентов. Здесь можно буквально стоять одновременно в Европе и Азии.",
+  },
+  {
+    name: "Уральский минералогический музей",
+    category: "Музеи",
+    description:
+      "Богатейшая коллекция уральских самоцветов, минералов и горных пород. Урал издревле славится своими недрами — изумруды, малахит, горный хрусталь.",
+  },
+  {
+    name: "Свердловский рок-клуб",
+    category: "Музыка",
+    description:
+      "Легендарная площадка, с которой вышли «Наутилус Помпилиус», «Чайф» и «Агата Кристи». Екатеринбург — неофициальная рок-столица России.",
+  },
+  {
+    name: "Парк Маяковского",
+    category: "Природа",
+    description:
+      "Главный городской парк с аттракционами, зоопарком и прудом. Любимое место отдыха екатеринбуржцев в любое время года.",
+  },
+  {
+    name: "Ганина Яма",
+    category: "История",
+    description:
+      "Монастырь в урочище, где были сокрыты останки царской семьи. Святое место с деревянными храмами среди вековых сосен — центр паломничества.",
+  },
+  {
+    name: "Старая Башня (ЦУМ)",
+    category: "Архитектура",
+    description:
+      "Конструктивистская башня 1930-х годов — символ советского авангарда. Екатеринбург занимает второе место в мире по числу объектов конструктивизма.",
+  },
+  {
+    name: "Геологический музей УГГУ",
+    category: "Музеи",
+    description:
+      "Один из крупнейших геологических музеев страны с коллекцией уникальных образцов руд, минералов и метеоритов. Обязателен для любителей природы.",
+  },
+];
+
 export default function Featured() {
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-white">
-      <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
-        <img
-          src="/images/woman-horse.jpg"
-          alt="Woman on horse in countryside"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="flex-1 text-left lg:h-[800px] flex flex-col justify-center lg:mr-12 lg:order-1">
-        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-600">Функции, которые не стоят на месте</h3>
-        <p className="text-2xl lg:text-4xl mb-8 text-neutral-900 leading-tight">
-          Не просто список возможностей — живые, дышащие акценты. Каждая функция адаптируется к движению, контексту и настроению,
-          оживляя продукт с первого взгляда.
-        </p>
-        <button className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide">
-          Подробнее
-        </button>
+    <div id="attractions" className="bg-white py-20 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-16 text-center">
+          <h3 className="uppercase mb-4 text-sm tracking-widest text-neutral-500">
+            Путеводитель по городу
+          </h3>
+          <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
+            Достопримечательности
+            <br />
+            Екатеринбурга
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {attractions.map((item, index) => (
+            <div
+              key={index}
+              className="group border border-neutral-200 p-6 hover:border-neutral-900 transition-all duration-300"
+            >
+              <span className="inline-block text-xs uppercase tracking-widest text-neutral-400 mb-3">
+                {item.category}
+              </span>
+              <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-black">
+                {item.name}
+              </h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
