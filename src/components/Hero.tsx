@@ -19,7 +19,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full"
       >
         <img
-          src="https://cdn.poehali.dev/projects/17ba5d0e-0c9d-4de9-8817-507875aa08e4/files/1388bb9c-ee68-44b6-9228-a980784ae96b.jpg"
+          src="https://cdn.poehali.dev/projects/17ba5d0e-0c9d-4de9-8817-507875aa08e4/bucket/8503816d-fb29-4e2d-aa1f-19fbdf4232b6.jpg"
           alt="Екатеринбург с высоты"
           className="w-full h-full object-cover"
         />
